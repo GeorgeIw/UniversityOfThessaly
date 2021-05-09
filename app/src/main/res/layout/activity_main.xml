@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9d0d0"
+    android:contentDescription="@string/home_logo"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@drawable/logo_rounded_corners"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/uth1_logo"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/larisa"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/home_list_corners"
+        android:gravity="center"
+        android:paddingStart="0dp"
+        android:text="@string/larisa_city"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/volos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/volos"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/home_list_corners"
+        android:gravity="center"
+        android:paddingStart="0dp"
+        android:text="@string/volos_city"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/lamia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/larisa" />
+
+    <TextView
+        android:id="@+id/lamia"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/home_list_corners"
+        android:text="@string/lamia_city"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:paddingStart="0dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volos"
+        app:layout_constraintBottom_toTopOf="@id/trikala"/>
+
+    <TextView
+        android:id="@+id/trikala"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/home_list_corners"
+        android:text="@string/trikala_city"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:paddingStart="0dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lamia"
+        app:layout_constraintBottom_toTopOf="@id/karditsa"/>
+
+    <TextView
+        android:id="@+id/karditsa"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/home_list_corners"
+        android:text="@string/karditsa_city"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:paddingStart="0dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trikala" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
