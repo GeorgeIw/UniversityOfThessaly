@@ -28,12 +28,15 @@ public class TrikalaDepartmentsFragment extends Fragment {
         TextView cityName = rootViewTrikala.findViewById(R.id.city_name);
 
         cityName.setText(R.string.trikala_city);
+        cityName.setBackgroundResource(R.color.darkYellow);
+
+        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#f0b922");
 
         final ArrayList<Depts> TrikalaDepartments = new ArrayList<>();
 
-        TrikalaDepartments.add(new Depts(R.color.colorPrimaryDark,R.string.trikala_diet));
-        TrikalaDepartments.add(new Depts(R.color.colorPrimaryDark,R.string.trikala_physical_education_athletics));
-        TrikalaDepartments.add(new Depts(R.color.colorPrimaryDark,R.string.integb_trikala_civil_engineering));
+        TrikalaDepartments.add(new Depts(R.color.darkYellow,R.string.trikala_diet));
+        TrikalaDepartments.add(new Depts(R.color.darkYellow,R.string.trikala_physical_education_athletics));
+        TrikalaDepartments.add(new Depts(R.color.darkYellow,R.string.integb_trikala_civil_engineering));
 
         DeptsAdapter TrikalaDeptsAdapter = new DeptsAdapter(getActivity(),TrikalaDepartments);
 

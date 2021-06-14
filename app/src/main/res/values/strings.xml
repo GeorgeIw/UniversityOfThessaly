@@ -58,7 +58,10 @@
     <string name="trikala_physical_education_athletics">Τμήμα Επιστήμης Φυσικής Αγωγής και Αθλητισμού</string>
     <string name="integb_trikala_civil_engineering">Συμβούλιο Ένταξης - Πρόγραμμα Σπουδών Τμήματος Πολιτικών Μηχανικών Τ.Ε.</string>
     <string name="teachers">Καθηγητές</string>
+    <string name="studies">Πρόγραμμα \n Σπουδών</string>
     <string name="announcements">Ανακοινώσεις</string>
+    <string name="map">Χάρτης</string>
+    <string name="secretary">Γραμματεία</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

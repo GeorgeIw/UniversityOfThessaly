@@ -22,8 +22,7 @@
     <ListView
         android:id="@+id/departments_list"
         android:layout_width="419dp"
-        android:layout_height="631dp"
-        android:layout_marginBottom="4dp"
+        android:layout_height="600dp"
         android:background="#d9d0d0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -30,16 +30,19 @@ public class LamiaDepartmentsFragment extends Fragment {
         TextView cityName = rootViewLamia.findViewById(R.id.city_name);
 
         cityName.setText(R.string.lamia_city);
+        cityName.setBackgroundResource(R.color.darkPurple);
+
+        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#a3105f");
 
         final ArrayList<Depts> LamiaDepartments = new ArrayList<>();
 
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.lamia_computer_science));
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.lamia_cs_biomedicine));
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.lamia_physical_therapy));
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.lamia_maths));
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.lamia_physics));
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.integb_lamia_computer_engineering));
-        LamiaDepartments.add(new Depts(R.color.app_color,R.string.integb_lamia_physical_therapy));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_computer_science));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_cs_biomedicine));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_physical_therapy));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_maths));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_physics));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.integb_lamia_computer_engineering));
+        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.integb_lamia_physical_therapy));
 
         DeptsAdapter LamiaDeptsAdapter = new DeptsAdapter(getActivity(),LamiaDepartments);
 

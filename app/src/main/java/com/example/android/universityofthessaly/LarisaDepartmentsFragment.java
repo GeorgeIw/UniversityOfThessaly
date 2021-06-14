@@ -73,10 +73,78 @@ public class LarisaDepartmentsFragment extends Fragment {
                     Intent biochemistry = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
                     biochemistry.putExtra("Biochemistry",1);
                     startActivity(biochemistry);
-                } else {
-                    Intent biochemistry = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
-                    biochemistry.putExtra("Biochemistry",1);
-                    startActivity(biochemistry);
+                } else if(position == 1) {
+                    Intent medicine = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    medicine.putExtra("Medicine",2);
+                    startActivity(medicine);
+                } else if(position == 2) {
+                    Intent nursery = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    nursery.putExtra("Nursery",3);
+                    startActivity(nursery);
+                } else if(position == 3){
+                    Intent businessAdmin = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    businessAdmin.putExtra("BusinessAdmin",4);
+                    startActivity(businessAdmin);
+                } else if(position == 4){
+                    Intent accFinance = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    accFinance.putExtra("AccFinance",5);
+                    startActivity(accFinance);
+                } else if(position == 5){
+                    Intent environment = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    environment.putExtra("Environment",6);
+                    startActivity(environment);
+                } else if(position == 6){
+                    Intent healthSys = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    healthSys.putExtra("HealthSystems",7);
+                    startActivity(healthSys);
+                } else if(position == 7){
+                    Intent digitalSys = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    digitalSys.putExtra("DigitalSystems",8);
+                    startActivity(digitalSys);
+                } else if(position == 8){
+                    Intent agriculture = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    agriculture.putExtra("Agriculture",9);
+                    startActivity(agriculture);
+                } else if(position == 9){
+                    Intent animalScience = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    animalScience.putExtra("AnimalScience",10);
+                    startActivity(animalScience);
+                } else if(position == 10){
+                    Intent businessAdminIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    businessAdminIntegB.putExtra("BusinessAdministrationIntegB",11);
+                    startActivity(businessAdminIntegB);
+                } else if(position == 11){
+                    Intent electricalEnginIntegB = new Intent (getActivity(),LarisaDeptsDetailsActivity.class);
+                    electricalEnginIntegB.putExtra("ElectricalEnginIntegB",12);
+                    startActivity(electricalEnginIntegB);
+                } else if(position == 12){
+                    Intent medicalLabsIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    medicalLabsIntegB.putExtra("MedicalLabsIntegB",13);
+                    startActivity(medicalLabsIntegB);
+                } else if(position == 13){
+                    Intent accFinanceIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    accFinanceIntegB.putExtra("AccFinanceIntegB",14);
+                    startActivity(accFinanceIntegB);
+                } else if(position == 14){
+                    Intent computerScienceIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    computerScienceIntegB.putExtra("ComputerScienceIntegB",15);
+                    startActivity(computerScienceIntegB);
+                } else if(position == 15){
+                    Intent mechEnginIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    mechEnginIntegB.putExtra("MechEngineIntegB",16);
+                    startActivity(mechEnginIntegB);
+                } else if(position == 16){
+                    Intent nurseryIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    nurseryIntegB.putExtra("NurseryIntegB",17);
+                    startActivity(nurseryIntegB);
+                } else if(position == 17){
+                    Intent civilEnginIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    civilEnginIntegB.putExtra("CivilEnginIntegB",18);
+                    startActivity(civilEnginIntegB);
+                } else if(position == 18){
+                    Intent agriculturalIntegB = new Intent(getActivity(),LarisaDeptsDetailsActivity.class);
+                    agriculturalIntegB.putExtra("AgriculturalIntegB",19);
+                    startActivity(agriculturalIntegB);
                 }
             }
         });

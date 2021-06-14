@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class DetailsListAdapter extends ArrayAdapter<DeptsDetails> {
+public class DetailsListAdapterLarisa extends ArrayAdapter<DeptsDetails> {
 
 
-    public DetailsListAdapter(@NonNull Context context, ArrayList<DeptsDetails> detailsList) {
+    public DetailsListAdapterLarisa(@NonNull Context context, ArrayList<DeptsDetails> detailsList) {
         super(context, 0, detailsList);
     }
 
@@ -27,7 +27,7 @@ public class DetailsListAdapter extends ArrayAdapter<DeptsDetails> {
 
         View DetailsView = convertView;
         if(DetailsView == null){
-            DetailsView = LayoutInflater.from(getContext()).inflate(R.layout.grid_layout,parent, false);
+            DetailsView = LayoutInflater.from(getContext()).inflate(R.layout.grid_layout_larisa,parent, false);
         }
 
         DeptsDetails currentItem = getItem(position);
