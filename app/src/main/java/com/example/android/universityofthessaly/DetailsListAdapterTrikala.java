@@ -13,31 +13,31 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class DetailsListAdapterLarisa extends ArrayAdapter<DeptsDetails> {
+public class DetailsListAdapterTrikala extends ArrayAdapter<DeptsDetails> {
 
-
-    public DetailsListAdapterLarisa(@NonNull Context context, ArrayList<DeptsDetails> detailsList) {
+    public DetailsListAdapterTrikala(@NonNull Context context, ArrayList<DeptsDetails> detailsList) {
         super(context, 0, detailsList);
     }
-
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View DetailsViewLarisa = convertView;
-        if(DetailsViewLarisa == null){
-            DetailsViewLarisa = LayoutInflater.from(getContext()).inflate(R.layout.grid_layout_larisa,parent, false);
+        View DetailsViewTrikala = convertView;
+        if(DetailsViewTrikala == null){
+            DetailsViewTrikala = LayoutInflater.from(getContext()).inflate(R.layout.grid_layout_trikala,parent, false);
         }
 
         DeptsDetails currentItem = getItem(position);
 
-        ImageView DetailImage = DetailsViewLarisa.findViewById(R.id.details_img);
+        ImageView DetailImage = DetailsViewTrikala.findViewById(R.id.details_img);
         DetailImage.setImageResource(currentItem.getImage());
 
-        TextView DetailName = DetailsViewLarisa.findViewById(R.id.name_text);
+        TextView DetailName = DetailsViewTrikala.findViewById(R.id.name_text);
         DetailName.setText(currentItem.getName());
 
-        return DetailsViewLarisa;
+        return DetailsViewTrikala;
     }
+
+
 }

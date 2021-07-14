@@ -50,7 +50,7 @@
     <string name="lamia_physical_therapy">Τμήμα Φυσικοθεραπείας</string>
     <string name="lamia_maths">Τμήμα Μαθηματικών</string>
     <string name="lamia_computer_science">Τμήμα Πληροφορικής και Τηλεπικοινωνιών</string>
-    <string name="lamia_cs_biomedicine">Τμήμα Πληροφορικής με Εφαρμογές στη Βιοϊατρική</string>
+    <string name="lamia_cs_biomedicine">Τμήμα Πληροφορικής - με Εφαρμογές στη Βιοϊατρική</string>
     <string name="lamia_physics">Τμήμα Φυσικής</string>
     <string name="integb_lamia_computer_engineering">Συμβούλιο Ένταξης - Πρόγραμμα Σπουδών Τμήματος Μηχανικών Πληροφορικής Τ.Ε.</string>
     <string name="integb_lamia_physical_therapy">Συμβούλιο Ένταξης - Πρόγραμμα Σπουδών Τμήματος Φυσικοθεραπείας</string>
@@ -62,6 +62,5 @@
     <string name="announcements">Ανακοινώσεις</string>
     <string name="map">Χάρτης</string>
     <string name="secretary">Γραμματεία</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_list_item">image list item</string>
 </resources>

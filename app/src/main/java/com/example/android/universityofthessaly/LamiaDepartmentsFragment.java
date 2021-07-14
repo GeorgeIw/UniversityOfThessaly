@@ -1,5 +1,6 @@
 package com.example.android.universityofthessaly;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -49,6 +51,41 @@ public class LamiaDepartmentsFragment extends Fragment {
         ListView LamiaDeptsList = rootViewLamia.findViewById(R.id.departments_list);
 
         LamiaDeptsList.setAdapter(LamiaDeptsAdapter);
+
+        LamiaDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if (position == 0) {
+                    Intent computerScience = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    computerScience.putExtra("CSLamia", 0);
+                    startActivity(computerScience);
+                } else if (position == 1) {
+                    Intent csBiomedicine = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    csBiomedicine.putExtra("CSBiomedicineLamia", 1);
+                    startActivity(csBiomedicine);
+                } else if (position == 2) {
+                    Intent physicalTherapy = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    physicalTherapy.putExtra("PhysicalTherapyLamia", 2);
+                    startActivity(physicalTherapy);
+                } else if (position == 3) {
+                    Intent maths = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    maths.putExtra("MathsLamia", 3);
+                    startActivity(maths);
+                } else if (position == 4) {
+                    Intent physics = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    physics.putExtra("PhysicsLamia", 4);
+                    startActivity(physics);
+                } else if (position == 5) {
+                    Intent cEnginIntegB = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    cEnginIntegB.putExtra("ComputerEngineIntegBLamia", 5);
+                    startActivity(cEnginIntegB);
+                } else if (position == 6) {
+                    Intent physicalTherapyIntegB = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    physicalTherapyIntegB.putExtra("PhysicalTherapyIntegBLamia", 6);
+                    startActivity(physicalTherapyIntegB);
+                }
+            }
+            });
 
         return rootViewLamia;
     }

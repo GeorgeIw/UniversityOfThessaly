@@ -1,5 +1,6 @@
 package com.example.android.universityofthessaly;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -43,6 +45,25 @@ public class TrikalaDepartmentsFragment extends Fragment {
         ListView TrikalaListView = rootViewTrikala.findViewById(R.id.departments_list);
 
         TrikalaListView.setAdapter(TrikalaDeptsAdapter);
+
+        TrikalaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 0){
+                    Intent diet = new Intent(getActivity(),TrikalaDeptsDetailsActivity.class);
+                    diet.putExtra("TrikalaDiet",0);
+                    startActivity(diet);
+                } else if(position == 1){
+                    Intent physicalEducation = new Intent(getActivity(),TrikalaDeptsDetailsActivity.class);
+                    physicalEducation.putExtra("TrikalaPhysicalEdu",1);
+                    startActivity(physicalEducation);
+                } else {
+                    Intent civilEngin = new Intent(getActivity(),TrikalaDeptsDetailsActivity.class);
+                    civilEngin.putExtra("TrikalaCivilEngin",2);
+                    startActivity(civilEngin);
+                }
+            }
+        });
 
         return rootViewTrikala;
 

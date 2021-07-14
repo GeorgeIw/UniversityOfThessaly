@@ -3,14 +3,17 @@
     package="com.example.android.universityofthessaly">
 
     <application
-        android:fullBackupContent="true"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VolosDeptsDetailsActivity"/>
+        <activity android:name=".KarditsaDeptsDetailsActivity"/>
+        <activity android:name=".TrikalaDeptsDetailsActivity" />
+        <activity android:name=".LamiaDeptsDetailsActivity" />
+        <activity android:name=".VolosDeptsDetailsActivity" />
         <activity android:name=".LarisaDeptsDetailsActivity" />
         <activity android:name=".UthDeptsActivity" />
         <activity android:name=".MainActivity">

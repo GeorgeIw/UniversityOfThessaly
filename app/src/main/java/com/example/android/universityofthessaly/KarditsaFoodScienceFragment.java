@@ -12,12 +12,11 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class VolosArchitectureCsFragment extends Fragment {
+public class KarditsaFoodScienceFragment extends Fragment {
 
 
-    public VolosArchitectureCsFragment() {
+    public KarditsaFoodScienceFragment() {
         // Required empty public constructor
     }
 
@@ -28,24 +27,23 @@ public class VolosArchitectureCsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_depts_details, container, false);
 
         TextView title = rootView.findViewById(R.id.depts_details);
-        title.setText(R.string.volos_elec_computer_engineers);
+        title.setText(R.string.karditsa_food_science);
         title.setTextColor(Color.WHITE);
-        title.setTextSize(20);
-        title.setBackgroundResource(R.color.darkBlue);
+        title.setBackgroundResource(R.color.darkMauve);
 
-        ((VolosDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#0e47e3");
+        ((KarditsaDeptsDetailsActivity)getActivity()).updateStatusBarColor("#910dbd");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
-        deptsDetails.add(new DeptsDetails(R.drawable.studies_icon,R.string.studies));
+        deptsDetails.add(new DeptsDetails(R.drawable.book_icon,R.string.studies));
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterVolos adapter = new DetailsListAdapterVolos(getActivity(),deptsDetails);
+        DetailsListAdapterKarditsa adapter = new DetailsListAdapterKarditsa(getActivity(),deptsDetails);
         GridView grid = rootView.findViewById(R.id.grid);
-        grid.setBackgroundResource(R.color.black);
+        grid.setBackgroundResource(R.color.grey);
         grid.setAdapter(adapter);
 
         return rootView;

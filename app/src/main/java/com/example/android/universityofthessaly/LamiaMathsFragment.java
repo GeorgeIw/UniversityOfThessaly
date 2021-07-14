@@ -14,26 +14,26 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class VolosArchitectureCsFragment extends Fragment {
+public class LamiaMathsFragment extends Fragment {
 
-
-    public VolosArchitectureCsFragment() {
+    public LamiaMathsFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_depts_details, container, false);
 
         TextView title = rootView.findViewById(R.id.depts_details);
-        title.setText(R.string.volos_elec_computer_engineers);
+        title.setText(R.string.lamia_maths);
         title.setTextColor(Color.WHITE);
-        title.setTextSize(20);
-        title.setBackgroundResource(R.color.darkBlue);
+        title.setBackgroundResource(R.color.darkPurple);
 
-        ((VolosDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#0e47e3");
+        ((LamiaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#a3105f");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
@@ -43,9 +43,9 @@ public class VolosArchitectureCsFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterVolos adapter = new DetailsListAdapterVolos(getActivity(),deptsDetails);
+        DetailsListAdapterLamia adapter = new DetailsListAdapterLamia(getActivity(),deptsDetails);
         GridView grid = rootView.findViewById(R.id.grid);
-        grid.setBackgroundResource(R.color.black);
+        grid.setBackgroundResource(R.color.grey);
         grid.setAdapter(adapter);
 
         return rootView;
