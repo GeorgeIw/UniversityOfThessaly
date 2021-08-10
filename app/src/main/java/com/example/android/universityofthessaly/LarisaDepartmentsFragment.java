@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class LarisaDepartmentsFragment extends Fragment {
@@ -33,29 +34,33 @@ public class LarisaDepartmentsFragment extends Fragment {
         //Set the text of CityName view
         CityName.setText(R.string.larisa_city);
 
+        CityName.setBackgroundColor(getResources().getColor(R.color.red));
+
+        ((UthDeptsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+
         //Create the ArrayList Departments using the Depts class
         final ArrayList<Depts> LarisaDepartments = new ArrayList<>();
 
         //Add the components of the ArrayList
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_biochemistry_biotechnology));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_medicine));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_nursery));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_business_administration));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_accounting_and_finance));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_environment));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_heath_systems));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_digital_systems));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_agriculture_agrotechnology));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.larisa_animal_production_science));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_business_administration));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_electrical_engineering));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_medical_labs));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_accounting_and_finance));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_computer_science));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_mechanical_engineering));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_nursery));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_civil_engineering));
-        LarisaDepartments.add(new Depts(R.color.app_color,R.string.integb_larisa_agricultural_technicians));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_biochemistry_biotechnology));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_medicine));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_nursery));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_business_administration));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_accounting_and_finance));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_environment));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_energy_systems));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_digital_systems));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_agriculture_agrotechnology));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.larisa_animal_production_science));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_business_administration));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_electrical_engineering));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_medical_labs));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_logistics));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_computer_science));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_mechanical_engineering));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_nursery));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_civil_engineering));
+        LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_agricultural_technicians));
 
         //Create a new instance of the Adapter
         DeptsAdapter adapter = new DeptsAdapter(getActivity(),LarisaDepartments);
@@ -65,6 +70,7 @@ public class LarisaDepartmentsFragment extends Fragment {
 
         //Set the adapter to the ListView 'DeptsList'
         LarisaDeptsList.setAdapter(adapter);
+        LarisaDeptsList.setBackgroundColor(getResources().getColor(R.color.white));
 
         LarisaDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

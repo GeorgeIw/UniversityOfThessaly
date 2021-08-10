@@ -1,5 +1,6 @@
 package com.example.android.universityofthessaly;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -8,10 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class LarisaBiochemistryFragment extends Fragment {
 
@@ -30,8 +33,9 @@ public class LarisaBiochemistryFragment extends Fragment {
         TextView titleView = rootView.findViewById(R.id.depts_details);
         titleView.setText(R.string.larisa_biochemistry_biotechnology);
         titleView.setTextColor(Color.WHITE);
-        titleView.setBackgroundResource(R.color.app_color);
+        titleView.setBackgroundResource(R.color.red);
 
+        ((LarisaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
 
         final ArrayList<DeptsDetails> deptsDetailsBiochemistry = new ArrayList<>();
 
@@ -43,8 +47,23 @@ public class LarisaBiochemistryFragment extends Fragment {
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsBiochemistry);
         GridView gridView = rootView.findViewById(R.id.grid);
-        gridView.setBackgroundResource(R.color.black);
+        gridView.setBackgroundResource(R.color.redLight);
         gridView.setAdapter(adapter);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 4){
+                    Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
+                    secretary.putExtra("LbiochemistrySecratary",4);
+                    startActivity(secretary);
+                } else if(position == 1){
+                    Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
+                    secretary.putExtra("LsecondFragment",1);
+                    startActivity(secretary);
+                }
+            }
+        });
 
         return rootView;
     }

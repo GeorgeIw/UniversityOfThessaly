@@ -1,5 +1,6 @@
 package com.example.android.universityofthessaly;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -29,9 +31,9 @@ public class KarditsaIntegBForestryFragment extends Fragment {
         TextView title = rootView.findViewById(R.id.depts_details);
         title.setText(R.string.integb_karditsa_forestry_enviroment);
         title.setTextColor(Color.WHITE);
-        title.setBackgroundResource(R.color.darkMauve);
+        title.setBackgroundResource(R.color.deepOrange);
 
-        ((KarditsaDeptsDetailsActivity)getActivity()).updateStatusBarColor("#910dbd");
+        ((KarditsaDeptsDetailsActivity)getActivity()).updateStatusBarColor("#BF360C");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
@@ -43,8 +45,19 @@ public class KarditsaIntegBForestryFragment extends Fragment {
 
         DetailsListAdapterKarditsa adapter = new DetailsListAdapterKarditsa(getActivity(),deptsDetails);
         GridView grid = rootView.findViewById(R.id.grid);
-        grid.setBackgroundResource(R.color.grey);
+        grid.setBackgroundResource(R.color.deepOrangeLight);
         grid.setAdapter(adapter);
+
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 4){
+                    Intent secretary = new Intent(getActivity(),SecretaryActivityKarditsa.class);
+                    secretary.putExtra("KintegbForestrySecretary",4);
+                    startActivity(secretary);
+                }
+            }
+        });
 
         return rootView;
     }

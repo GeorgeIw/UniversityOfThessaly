@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class VolosDepartmentsFragment extends Fragment {
 
@@ -31,28 +32,29 @@ public class VolosDepartmentsFragment extends Fragment {
 
         //set the text on cityName
         cityName.setText(R.string.volos_city);
-        cityName.setBackgroundResource(R.color.darkBlue);
+        cityName.setBackgroundResource(R.color.indigo);
 
-        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#0e47e3");
+        ((UthDeptsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#1A237E");
 
         //create the ArrayList Departments
         final ArrayList<Depts> VolosDepartments = new ArrayList<>();
 
+
         //Add the components of the ArrayList
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_architecture));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_elec_computer_engineers));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_spatial_engineering));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_mechanical_engineering));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_civil_engineering));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_primary_education));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_special_teaching));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_preschool_education));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_linguistic_intercultural));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_archeology_anthropology));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_politism_industry));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_economical_science));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_agronomy_ichthyology));
-        VolosDepartments.add(new Depts(R.color.darkBlue,R.string.volos_agriculture));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_architecture));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_elec_computer_engineers));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_spatial_engineering));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_mechanical_engineering));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_civil_engineering));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_primary_education));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_special_education));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_preschool_education));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_linguistic_intercultural));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_archeology_anthropology));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_politism_industry));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_economical_science));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_agronomy_ichthyology));
+        VolosDepartments.add(new Depts(R.color.indigo,R.string.volos_agriculture));
 
         //create the adapter instance
         DeptsAdapter adapter = new DeptsAdapter(getActivity(),VolosDepartments);
@@ -62,6 +64,7 @@ public class VolosDepartmentsFragment extends Fragment {
 
         //set the adapter on VolosDeptList ListView
         VolosDeptsList.setAdapter(adapter);
+        VolosDeptsList.setBackgroundColor(getResources().getColor(R.color.white));
 
         VolosDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

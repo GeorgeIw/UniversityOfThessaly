@@ -1,10 +1,13 @@
 package com.example.android.universityofthessaly;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class LarisaDeptsDetailsActivity extends AppCompatActivity {
 
@@ -44,7 +47,7 @@ public class LarisaDeptsDetailsActivity extends AppCompatActivity {
             transaction.add(R.id.details_fragment_holder,larisaEnviromentFragment);
             transaction.commit();
         } else if(getIntent().hasExtra("HealthSystems")){
-            LarisaHealthSystemsFragment larisaHealthSystemsFragment = new LarisaHealthSystemsFragment();
+            LarisaEnergySystemsFragment larisaHealthSystemsFragment = new LarisaEnergySystemsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.details_fragment_holder,larisaHealthSystemsFragment);
             transaction.commit();
@@ -79,7 +82,7 @@ public class LarisaDeptsDetailsActivity extends AppCompatActivity {
             transaction.add(R.id.details_fragment_holder,larisaIntegBmedicalLabsFragment);
             transaction.commit();
         } else if(getIntent().hasExtra("AccFinanceIntegB")){
-            LarisaIntegBaccFinanceFragment larisaIntegBaccFinanceFragment = new LarisaIntegBaccFinanceFragment();
+            LarisaIntegBlogisticsFragment larisaIntegBaccFinanceFragment = new LarisaIntegBlogisticsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.details_fragment_holder,larisaIntegBaccFinanceFragment);
             transaction.commit();
@@ -108,6 +111,14 @@ public class LarisaDeptsDetailsActivity extends AppCompatActivity {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.details_fragment_holder,larisaIntegBagriculturalFragment);
             transaction.commit();
+        }
+    }
+
+    public void updateStatusBarColor(String color){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor(color));
         }
     }
 

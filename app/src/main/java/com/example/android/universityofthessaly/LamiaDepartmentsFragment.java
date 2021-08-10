@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class LamiaDepartmentsFragment extends Fragment {
 
@@ -32,25 +33,26 @@ public class LamiaDepartmentsFragment extends Fragment {
         TextView cityName = rootViewLamia.findViewById(R.id.city_name);
 
         cityName.setText(R.string.lamia_city);
-        cityName.setBackgroundResource(R.color.darkPurple);
+        cityName.setBackgroundResource(R.color.blueGrey);
 
-        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#a3105f");
+        ((UthDeptsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#37474F");
 
         final ArrayList<Depts> LamiaDepartments = new ArrayList<>();
 
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_computer_science));
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_cs_biomedicine));
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_physical_therapy));
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_maths));
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.lamia_physics));
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.integb_lamia_computer_engineering));
-        LamiaDepartments.add(new Depts(R.color.darkPurple,R.string.integb_lamia_physical_therapy));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_computer_science));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_cs_biomedicine));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_physical_therapy));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_maths));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_physics));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.integb_lamia_computer_engineering));
+        LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.integb_lamia_physical_therapy));
 
         DeptsAdapter LamiaDeptsAdapter = new DeptsAdapter(getActivity(),LamiaDepartments);
 
         ListView LamiaDeptsList = rootViewLamia.findViewById(R.id.departments_list);
 
         LamiaDeptsList.setAdapter(LamiaDeptsAdapter);
+        LamiaDeptsList.setBackgroundColor(getResources().getColor(R.color.white));
 
         LamiaDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

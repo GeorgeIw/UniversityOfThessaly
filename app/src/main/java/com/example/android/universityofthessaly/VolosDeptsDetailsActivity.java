@@ -22,7 +22,7 @@ public class VolosDeptsDetailsActivity extends AppCompatActivity {
             transaction.add(R.id.details_fragment_holder,volosAchitectureFragment);
             transaction.commit();
         } else if(getIntent().hasExtra("ElectricalCsVolos")){
-            VolosArchitectureCsFragment volosAchitectureFragment = new VolosArchitectureCsFragment();
+            VolosElectricalCsFragment volosAchitectureFragment = new VolosElectricalCsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.details_fragment_holder,volosAchitectureFragment);
             transaction.commit();
@@ -77,7 +77,7 @@ public class VolosDeptsDetailsActivity extends AppCompatActivity {
             transaction.add(R.id.details_fragment_holder,volosEconomicalScienceFragment);
             transaction.commit();
         } else if(getIntent().hasExtra("AgronomyIchthyologyVolos")){
-            VolosAgronomyIchthyology volosAgronomyIchthyology = new VolosAgronomyIchthyology();
+            VolosAgricultureIchthyology volosAgronomyIchthyology = new VolosAgricultureIchthyology();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.details_fragment_holder,volosAgronomyIchthyology);
             transaction.commit();

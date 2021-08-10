@@ -1,5 +1,6 @@
 package com.example.android.universityofthessaly;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -8,10 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class LarisaMedicineFragment extends Fragment {
 
@@ -29,7 +32,9 @@ public class LarisaMedicineFragment extends Fragment {
         title.setText(R.string.larisa_medicine);
         title.setTextColor(Color.WHITE);
         title.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
-        title.setBackgroundResource(R.color.app_color);
+        title.setBackgroundResource(R.color.red);
+
+        ((LarisaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
 
         final ArrayList<DeptsDetails> deptsDetailsMedicine = new ArrayList<>();
 
@@ -41,8 +46,20 @@ public class LarisaMedicineFragment extends Fragment {
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsMedicine);
         GridView grid = rootView.findViewById(R.id.grid);
-        grid.setBackgroundResource(R.color.black);
+        grid.setBackgroundResource(R.color.redLight);
         grid.setAdapter(adapter);
+
+
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 4){
+                    Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
+                    secretary.putExtra("LmedicineSecretary",4);
+                    startActivity(secretary);
+                }
+            }
+        });
 
         return rootView;
     }

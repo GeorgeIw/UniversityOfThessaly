@@ -29,19 +29,19 @@ public class KarditsaDepartmentsFragment extends Fragment {
         TextView cityName = rootviewKarditsa.findViewById(R.id.city_name);
 
         cityName.setText(R.string.karditsa_city);
-        cityName.setBackgroundResource(R.color.darkMauve);
+        cityName.setBackgroundResource(R.color.deepOrange);
 
-        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#910dbd");
+        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#BF360C");
 
         final ArrayList<Depts> KarditsaDepartments = new ArrayList<>();
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.karditsa_public_health));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.karditsa_vet));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.karditsa_forestry_wood));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.karditsa_food_science));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.integb_karditsa_forestry_enviroment));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.integb_karditsa_diet));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.integb_karditsa_wood_design));
-        KarditsaDepartments.add(new Depts(R.color.darkMauve,R.string.integb_karditsa_food_science));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.karditsa_public_health));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.karditsa_vet));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.karditsa_forestry_wood));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.karditsa_food_science));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.integb_karditsa_forestry_enviroment));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.integb_karditsa_diet));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.integb_karditsa_wood_design));
+        KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.integb_karditsa_food_science));
 
         DeptsAdapter KarditsaDeptsAdapter = new DeptsAdapter(getActivity(),KarditsaDepartments);
 
