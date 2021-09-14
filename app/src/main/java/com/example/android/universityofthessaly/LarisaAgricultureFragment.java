@@ -52,6 +52,15 @@ public class LarisaAgricultureFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsLarisaActivity.class);
+                    teachers.putExtra("LarisaAgricultureTeachers",0);
+                    startActivity(teachers);
+                } else if(position == 1){
+                    Intent announcements = new Intent(getActivity(),DetailsLarisaActivity.class);
+                    announcements.putExtra("LarisaAgricultureAnnouncements",1);
+                    startActivity(announcements);
+                }
                 if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LagrotechnologySecretary",4);

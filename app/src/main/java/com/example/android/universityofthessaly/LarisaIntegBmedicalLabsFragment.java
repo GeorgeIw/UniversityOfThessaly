@@ -34,7 +34,7 @@ public class LarisaIntegBmedicalLabsFragment extends Fragment {
         title.setTextSize(20);
         title.setBackgroundResource(R.color.red);
 
-        ((LarisaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+        ((LarisaDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#b71c1c");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
@@ -52,7 +52,17 @@ public class LarisaIntegBmedicalLabsFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 4){
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsLarisaSecondActivity.class);
+                    teachers.putExtra("LarisaIntegbMedicalLabsTeachers",0);
+                    startActivity(teachers);
+
+                } else if(position ==1){
+                    Intent announcements = new Intent(getActivity(),DetailsLarisaSecondActivity.class);
+                    announcements.putExtra("LarisaIntegbMedicalLabsAnnouncements",1);
+                    startActivity(announcements);
+
+                }else if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LintegbMedicalLabsSecretary",4);
                     startActivity(secretary);

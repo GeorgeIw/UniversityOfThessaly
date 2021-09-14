@@ -51,7 +51,17 @@ public class LarisaDigitalSysFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 4){
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsLarisaActivity.class);
+                    teachers.putExtra("LarisaDigitalSysTeachers",0);
+                    startActivity(teachers);
+
+                } else if(position == 1){
+                    Intent announcements = new Intent(getActivity(),DetailsLarisaActivity.class);
+                    announcements.putExtra("LarisaDigitalSysAnnouncements",1);
+                    startActivity(announcements);
+
+                } else if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LdigitalSysSecretary",4);
                     startActivity(secretary);

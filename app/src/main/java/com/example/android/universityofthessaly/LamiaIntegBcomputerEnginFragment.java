@@ -34,7 +34,7 @@ public class LamiaIntegBcomputerEnginFragment extends Fragment {
         title.setTextSize(20);
         title.setBackgroundResource(R.color.blueGrey);
 
-        ((LamiaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#37474F");
+        ((LamiaDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#37474F");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class LamiaIntegBcomputerEnginFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterLamia adapter = new DetailsListAdapterLamia(getActivity(),deptsDetails);
+        DetailsListAdapterLamia adapter = new DetailsListAdapterLamia(requireActivity(),deptsDetails);
         GridView grid = rootView.findViewById(R.id.grid);
         grid.setBackgroundResource(R.color.blueGreyLight);
         grid.setAdapter(adapter);
@@ -52,6 +52,15 @@ public class LamiaIntegBcomputerEnginFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsLamiaActivity.class);
+                    teachers.putExtra("LamiaIntegbCompuEnginTeachers",0);
+                    startActivity(teachers);
+                } else if(position == 1){
+                    Intent announcements = new Intent(getActivity(),DetailsLamiaActivity.class);
+                    announcements.putExtra("LamiaIntegbCompuEnginAnnouncements",1);
+                    startActivity(announcements);
+                }
                 if(position == 4){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityLamia.class);
                     secretary.putExtra("LamiaIntegBcsSecretary",4);

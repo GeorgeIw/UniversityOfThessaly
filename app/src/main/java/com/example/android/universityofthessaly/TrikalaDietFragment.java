@@ -33,7 +33,7 @@ public class TrikalaDietFragment extends Fragment {
         title.setTextColor(Color.WHITE);
         title.setBackgroundResource(R.color.teal);
 
-        ((TrikalaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#004D40");
+        ((TrikalaDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#004D40");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
@@ -43,7 +43,7 @@ public class TrikalaDietFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterTrikala adapter = new DetailsListAdapterTrikala(getActivity(),deptsDetails);
+        DetailsListAdapterTrikala adapter = new DetailsListAdapterTrikala(requireActivity(),deptsDetails);
         GridView grid = rootView.findViewById(R.id.grid);
         grid.setBackgroundResource(R.color.teal600);
         grid.setAdapter(adapter);
@@ -51,7 +51,17 @@ public class TrikalaDietFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 4){
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsTrikalaActivity.class);
+                    teachers.putExtra("TrikalaDietTeachers",0);
+                    startActivity(teachers);
+
+                } else if(position == 1){
+                    Intent announcements = new Intent(getActivity(),DetailsTrikalaActivity.class);
+                    announcements.putExtra("TrikalaDietAnnouncements",1);
+                    startActivity(announcements);
+
+                } else if(position == 4){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityTrikala.class);
                     secretary.putExtra("TdietSecretary",4);
                     startActivity(secretary);

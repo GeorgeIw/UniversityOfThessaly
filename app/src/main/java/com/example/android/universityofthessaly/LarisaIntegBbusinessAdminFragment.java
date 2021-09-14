@@ -35,7 +35,7 @@ public class LarisaIntegBbusinessAdminFragment extends Fragment {
         title.setTextSize(20);
         title.setBackgroundResource(R.color.red);
 
-        ((LarisaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+        ((LarisaDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#b71c1c");
 
         final ArrayList<DeptsDetails> deptsDetailsintegBbusinessAdmin = new ArrayList<>();
 
@@ -45,7 +45,7 @@ public class LarisaIntegBbusinessAdminFragment extends Fragment {
         deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsintegBbusinessAdmin);
+        DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(requireActivity(),deptsDetailsintegBbusinessAdmin);
         GridView grid = rootView.findViewById(R.id.grid);
         grid.setBackgroundResource(R.color.redLight);
         grid.setAdapter(adapter);
@@ -53,7 +53,16 @@ public class LarisaIntegBbusinessAdminFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 4){
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsLarisaSecondActivity.class);
+                    teachers.putExtra("LarisaIntegbBusinessAdminTeachers",0);
+                    startActivity(teachers);
+                } else if(position == 1){
+                    Intent announcements = new Intent(getActivity(),DetailsLarisaSecondActivity.class);
+                    announcements.putExtra("LarisaIntegbBusinessAdminAnnouncemets",1);
+                    startActivity(announcements);
+                }
+                else if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LintegbBusinessAdminSecretary",4);
                     startActivity(secretary);

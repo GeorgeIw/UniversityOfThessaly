@@ -34,7 +34,7 @@ public class VolosArcheologyAnthrFragment extends Fragment {
         title.setTextSize(20);
         title.setBackgroundResource(R.color.indigo);
 
-        ((VolosDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#1A237E");
+        ((VolosDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#1A237E");
 
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class VolosArcheologyAnthrFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterVolos adapter = new DetailsListAdapterVolos(getActivity(),deptsDetails);
+        DetailsListAdapterVolos adapter = new DetailsListAdapterVolos(requireActivity(),deptsDetails);
         GridView grid = rootView.findViewById(R.id.grid);
         grid.setBackgroundResource(R.color.indigoGridBackground);
         grid.setAdapter(adapter);
@@ -52,7 +52,17 @@ public class VolosArcheologyAnthrFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 4){
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(),DetailsVolosActivity.class);
+                    teachers.putExtra("VolosArcheologyTeachers",0);
+                    startActivity(teachers);
+
+                } else if(position == 1){
+                    Intent announcements = new Intent(getActivity(),DetailsVolosActivity.class);
+                    announcements.putExtra("VolosArcheologyAnnouncements",1);
+                    startActivity(announcements);
+
+                } else if(position == 4){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityVolos.class);
                     secretary.putExtra("VarcheologySecretary",4);
                     startActivity(secretary);

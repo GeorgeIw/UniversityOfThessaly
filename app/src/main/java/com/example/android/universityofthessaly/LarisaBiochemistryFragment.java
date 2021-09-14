@@ -14,7 +14,6 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class LarisaBiochemistryFragment extends Fragment {
 
@@ -35,7 +34,7 @@ public class LarisaBiochemistryFragment extends Fragment {
         titleView.setTextColor(Color.WHITE);
         titleView.setBackgroundResource(R.color.red);
 
-        ((LarisaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+        ((LarisaDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#b71c1c");
 
         final ArrayList<DeptsDetails> deptsDetailsBiochemistry = new ArrayList<>();
 
@@ -53,13 +52,19 @@ public class LarisaBiochemistryFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 4){
+
+                if(position == 0){
+                    Intent teachers = new Intent(getActivity(), DetailsLarisaActivity.class);
+                    teachers.putExtra("LarisaBiochemistryTeachers",0);
+                    startActivity(teachers);
+                } else if(position == 1) {
+                    Intent announcements = new Intent(getActivity(),DetailsLarisaActivity.class);
+                    announcements.putExtra("LarisaBiochemistryAnnouncements",1);
+                    startActivity(announcements);
+
+                }  else if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LbiochemistrySecratary",4);
-                    startActivity(secretary);
-                } else if(position == 1){
-                    Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LsecondFragment",1);
                     startActivity(secretary);
                 }
             }
