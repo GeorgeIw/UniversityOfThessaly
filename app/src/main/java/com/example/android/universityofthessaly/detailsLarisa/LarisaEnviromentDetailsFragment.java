@@ -38,7 +38,7 @@ public class LarisaEnviromentDetailsFragment extends Fragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setDomStorageEnabled(true);
 
         if(getActivity().getIntent().hasExtra("LarisaEnviromentTeachers")){
             webView.setWebViewClient(new WebViewClient(){

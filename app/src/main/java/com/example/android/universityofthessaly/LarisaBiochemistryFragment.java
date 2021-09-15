@@ -2,6 +2,7 @@ package com.example.android.universityofthessaly;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -40,7 +41,7 @@ public class LarisaBiochemistryFragment extends Fragment {
 
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
-        deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.book_icon,R.string.studies));
+        deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
@@ -61,8 +62,10 @@ public class LarisaBiochemistryFragment extends Fragment {
                     Intent announcements = new Intent(getActivity(),DetailsLarisaActivity.class);
                     announcements.putExtra("LarisaBiochemistryAnnouncements",1);
                     startActivity(announcements);
-
-                }  else if(position == 4){
+                } else if(position == 2){
+                    Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.bio.uth.gr/"));
+                    startActivity(browser);
+                } else if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LbiochemistrySecratary",4);
                     startActivity(secretary);

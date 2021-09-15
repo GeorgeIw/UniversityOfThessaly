@@ -35,26 +35,37 @@ public class LarisaNurseryDetailsFragment extends Fragment {
 
         final WebView webView = rootView.findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(false);
+        webView.getSettings().setUseWideViewPort(false);
         webView.getSettings().setSupportZoom(true);
 
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(false);
 
-        if(requireActivity().getIntent().hasExtra("LarisaNurseryTeachers") || requireActivity().getIntent().hasExtra("LarisaNurseryAnnouncements")){
+        if(requireActivity().getIntent().hasExtra("LarisaNurseryTeachers")){
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public void onPageFinished(WebView view, String url) {
-                    view.loadUrl("javascript:document.getElementsByClassName(\"content\")[0].setAttribute(\"style\",\"display:none;\");");
-                    view.loadUrl("javascript:document.getElementsByClassName(\"containerheaderfull\")[0].setAttribute(\"style\",\"display:none;\");");
-                    view.loadUrl("javascript:document.getElementsByClassName(\"system-messages clearfix\")[0].setAttribute(\"style\",\"display:none;\");");
-                    view.loadUrl("javascript:document.getElementsByClassName(\"taxonomy-term vocabulary-uth-tax-akademaike-dome\")[0].setAttribute(\"style\",\"display:none;\");");
-                    view.loadUrl("javascript:document.getElementsByClassName(\"clearfix header-top__container\")[0].setAttribute(\"style\",\"display:none;\");");
+                    webView.setInitialScale(100);
+                    view.loadUrl("javascript:document.getElementsByClassName(\"mx_wrapper_adverts mx_section\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"mx_wrapper_header mx_section\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"mx_wrapper_copyright mx_section\")[0].setAttribute(\"style\",\"display:none;\");");
                 }
-
             });
-            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-epistimon-ygeias/tmima-nosileytikis");
+            webView.loadUrl("http://nurs.uth.gr/index.php/mprosopiko/mmeli-dep");
+            progressBar.setVisibility(View.GONE);
+
+        } else if(requireActivity().getIntent().hasExtra("LarisaNurseryAnnouncements")){
+            webView.setWebViewClient(new WebViewClient(){
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    webView.setInitialScale(100);
+                    view.loadUrl("javascript:document.getElementsByClassName(\"mx_wrapper_adverts mx_section\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"mx_wrapper_header mx_section\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"mx_wrapper_copyright mx_section\")[0].setAttribute(\"style\",\"display:none;\");");
+                }
+            });
+            webView.loadUrl("http://nurs.uth.gr/index.php/manakoinoseis/manakoinoseis-tmimatos");
             progressBar.setVisibility(View.GONE);
         }
         return  rootView;

@@ -2,6 +2,7 @@ package com.example.android.universityofthessaly;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -31,6 +32,7 @@ public class KarditsaIntegBForestryFragment extends Fragment {
         TextView title = rootView.findViewById(R.id.depts_details);
         title.setText(R.string.integb_karditsa_forestry_enviroment);
         title.setTextColor(Color.WHITE);
+        title.setTextSize(20);
         title.setBackgroundResource(R.color.deepOrange);
 
         ((KarditsaDeptsDetailsActivity)requireActivity()).updateStatusBarColor("#BF360C");
@@ -39,7 +41,7 @@ public class KarditsaIntegBForestryFragment extends Fragment {
 
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
-        deptsDetails.add(new DeptsDetails(R.drawable.book_icon,R.string.studies));
+        deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
@@ -55,12 +57,13 @@ public class KarditsaIntegBForestryFragment extends Fragment {
                     Intent teachers = new Intent(getActivity(),DetailsKarditsaActivity.class);
                     teachers.putExtra("KarditsaIntegbForestryTeachers",0);
                     startActivity(teachers);
-
                 } else if(position == 1){
                     Intent announcements = new Intent(getActivity(),DetailsKarditsaActivity.class);
                     announcements.putExtra("KarditsaIntegbForestryAnnouncements",1);
                     startActivity(announcements);
-
+                } else if(position == 2){
+                    Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-dasoponias-kai-diaheirisis-fysikoy-periballontos-tei-thessalias-karditsa"));
+                    startActivity(browser);
                 } else if(position == 4){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityKarditsa.class);
                     secretary.putExtra("KintegbForestrySecretary",4);

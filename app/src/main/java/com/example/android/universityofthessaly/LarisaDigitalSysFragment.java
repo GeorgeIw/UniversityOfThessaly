@@ -2,6 +2,7 @@ package com.example.android.universityofthessaly;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -33,13 +34,13 @@ public class LarisaDigitalSysFragment extends Fragment {
         title.setTextColor(Color.WHITE);
         title.setBackgroundResource(R.color.red);
 
-        ((LarisaDeptsDetailsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+        ((LarisaDeptsDetailsActivity) requireActivity()).updateStatusBarColor("#b71c1c");
 
         final ArrayList<DeptsDetails> deptsDetailsDigitalSys = new ArrayList<>();
 
         deptsDetailsDigitalSys.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsDigitalSys.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
-        deptsDetailsDigitalSys.add(new DeptsDetails(R.drawable.book_icon,R.string.studies));
+        deptsDetailsDigitalSys.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
         deptsDetailsDigitalSys.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsDigitalSys.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
@@ -55,12 +56,13 @@ public class LarisaDigitalSysFragment extends Fragment {
                     Intent teachers = new Intent(getActivity(),DetailsLarisaActivity.class);
                     teachers.putExtra("LarisaDigitalSysTeachers",0);
                     startActivity(teachers);
-
                 } else if(position == 1){
                     Intent announcements = new Intent(getActivity(),DetailsLarisaActivity.class);
                     announcements.putExtra("LarisaDigitalSysAnnouncements",1);
                     startActivity(announcements);
-
+                } else if(position == 2) {
+                    Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ds.uth.gr/"));
+                    startActivity(browser);
                 } else if(position == 4){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
                     secretary.putExtra("LdigitalSysSecretary",4);

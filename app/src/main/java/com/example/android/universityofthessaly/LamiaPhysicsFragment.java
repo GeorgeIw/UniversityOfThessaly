@@ -2,6 +2,7 @@ package com.example.android.universityofthessaly;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,7 +15,6 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class LamiaPhysicsFragment extends Fragment {
 
@@ -39,7 +39,7 @@ public class LamiaPhysicsFragment extends Fragment {
 
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
-        deptsDetails.add(new DeptsDetails(R.drawable.book_icon,R.string.studies));
+        deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
         deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
@@ -59,8 +59,10 @@ public class LamiaPhysicsFragment extends Fragment {
                     Intent announcements = new Intent(getActivity(),DetailsLamiaActivity.class);
                     announcements.putExtra("LamiaPhysicsAnnouncements",1);
                     startActivity(announcements);
-                }
-                if(position == 4){
+                } else if(position == 2){
+                    Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://phys.uth.gr/"));
+                    startActivity(browser);
+                } else if(position == 4){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityLamia.class);
                     secretary.putExtra("LamiaPhysicsSecretary",4);
                     startActivity(secretary);

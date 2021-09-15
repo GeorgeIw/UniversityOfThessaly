@@ -53,9 +53,6 @@ public class LarisaAnimalScienceDetailsFragment extends Fragment {
             });
             webView.loadUrl("https://as.uth.gr/tmima/dynamiko/");
             progressBar.setVisibility(View.GONE);
-            //Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://as.uth.gr/tmima/dynamiko/"));
-            //startActivity(browser);
-            //progressBar.setVisibility(View.GONE);
 
         } else if(getActivity().getIntent().hasExtra("LarisaAnimalScienceAnnouncements")){
             webView.setWebViewClient(new WebViewClient(){
