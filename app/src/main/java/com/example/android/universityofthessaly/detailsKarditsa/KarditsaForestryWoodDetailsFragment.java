@@ -1,4 +1,4 @@
-package com.example.android.universityofthessaly.DetailsKarditsa;
+package com.example.android.universityofthessaly.detailsKarditsa;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

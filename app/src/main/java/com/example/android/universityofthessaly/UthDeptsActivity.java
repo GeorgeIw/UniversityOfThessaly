@@ -21,10 +21,16 @@ public class UthDeptsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uth_depts);
 
+        //this if-else statement handles the Intents sent from MainActivity.java
+        //depending on the Intent, a corresponding Fragment with its List will open
         if(getIntent().hasExtra("larisaExtra")){
+            //create the object for fragment
             LarisaDepartmentsFragment larisaDeptsFragment = new LarisaDepartmentsFragment();
+            //call getSupportFragmentManager to start the fragment transaction
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            //add the frame to the fragment
             transaction.add(R.id.fragment_holder, larisaDeptsFragment);
+            //execute the transaction
             transaction.commit();
         } else if(getIntent().hasExtra("volosExtra")){
             VolosDepartmentsFragment volosDeptsFragment = new VolosDepartmentsFragment();

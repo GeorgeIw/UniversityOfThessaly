@@ -34,7 +34,7 @@ public class VolosDepartmentsFragment extends Fragment {
         cityName.setText(R.string.volos_city);
         cityName.setBackgroundResource(R.color.indigo);
 
-        ((UthDeptsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#1A237E");
+        ((UthDeptsActivity) requireActivity()).updateStatusBarColor("#1A237E");
 
         //create the ArrayList Departments
         final ArrayList<Depts> VolosDepartments = new ArrayList<>();

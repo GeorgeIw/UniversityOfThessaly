@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //find the View with id : larisa and store it to LarisaTextView variable
         TextView larisaTextView = findViewById(R.id.larisa);
+        //set the ClickListener using the onClick method that was created outside of onCreate
         larisaTextView.setOnClickListener(this);
 
         TextView volosTextView = findViewById(R.id.volos);

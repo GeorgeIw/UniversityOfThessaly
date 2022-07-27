@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class KarditsaDepartmentsFragment extends Fragment {
 
@@ -31,7 +32,7 @@ public class KarditsaDepartmentsFragment extends Fragment {
         cityName.setText(R.string.karditsa_city);
         cityName.setBackgroundResource(R.color.deepOrange);
 
-        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#BF360C");
+        ((UthDeptsActivity) requireActivity()).updateStatusBarColor("#BF360C");
 
         final ArrayList<Depts> KarditsaDepartments = new ArrayList<>();
         KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.karditsa_public_health));
@@ -43,11 +44,12 @@ public class KarditsaDepartmentsFragment extends Fragment {
         KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.integb_karditsa_wood_design));
         KarditsaDepartments.add(new Depts(R.color.deepOrange,R.string.integb_karditsa_food_science));
 
-        DeptsAdapter KarditsaDeptsAdapter = new DeptsAdapter(getActivity(),KarditsaDepartments);
+        DeptsAdapter KarditsaDeptsAdapter = new DeptsAdapter(requireActivity(),KarditsaDepartments);
 
         ListView KarditsaDeptsList = rootviewKarditsa.findViewById(R.id.departments_list);
 
         KarditsaDeptsList.setAdapter(KarditsaDeptsAdapter);
+        KarditsaDeptsList.setBackgroundColor(getResources().getColor(R.color.white));
 
         KarditsaDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

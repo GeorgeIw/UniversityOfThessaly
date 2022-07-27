@@ -42,7 +42,6 @@ public class LarisaIntegBbusinessAdminFragment extends Fragment {
         deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsintegBbusinessAdmin.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(requireActivity(),deptsDetailsintegBbusinessAdmin);
@@ -64,9 +63,9 @@ public class LarisaIntegBbusinessAdminFragment extends Fragment {
                 } else if(position == 2) {
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-dioikisis-epiheiriseon-tei-thessalias-larisa"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LintegbBusinessAdminSecretary",4);
+                    secretary.putExtra("LintegbBusinessAdminSecretary",3);
                     startActivity(secretary);
                 }
             }

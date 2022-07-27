@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class TrikalaDepartmentsFragment extends Fragment {
 
@@ -32,7 +33,7 @@ public class TrikalaDepartmentsFragment extends Fragment {
         cityName.setText(R.string.trikala_city);
         cityName.setBackgroundResource(R.color.teal);
 
-        ((UthDeptsActivity)getActivity()).updateStatusBarColor("#004D40");
+        ((UthDeptsActivity) requireActivity()).updateStatusBarColor("#004D40");
 
         final ArrayList<Depts> TrikalaDepartments = new ArrayList<>();
 
@@ -40,11 +41,12 @@ public class TrikalaDepartmentsFragment extends Fragment {
         TrikalaDepartments.add(new Depts(R.color.teal,R.string.trikala_physical_education_athletics));
         TrikalaDepartments.add(new Depts(R.color.teal,R.string.integb_trikala_civil_engineering));
 
-        DeptsAdapter TrikalaDeptsAdapter = new DeptsAdapter(getActivity(),TrikalaDepartments);
+        DeptsAdapter TrikalaDeptsAdapter = new DeptsAdapter(requireActivity(),TrikalaDepartments);
 
         ListView TrikalaListView = rootViewTrikala.findViewById(R.id.departments_list);
 
         TrikalaListView.setAdapter(TrikalaDeptsAdapter);
+        TrikalaListView.setBackgroundColor(getResources().getColor(R.color.white));
 
         TrikalaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -41,7 +41,6 @@ public class VolosAchitectureFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterVolos adapter = new DetailsListAdapterVolos(getActivity(),deptsDetails);
@@ -63,9 +62,9 @@ public class VolosAchitectureFragment extends Fragment {
                 } else if(position == 2){
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.arch.uth.gr/el/"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityVolos.class);
-                    secretary.putExtra("VarchitectureSecretary",4);
+                    secretary.putExtra("VarchitectureSecretary",3);
                     startActivity(secretary);
                 }
             }

@@ -1,4 +1,4 @@
-package com.example.android.universityofthessaly.DetailsKarditsa;
+package com.example.android.universityofthessaly.detailsKarditsa;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -16,10 +16,9 @@ import android.widget.TextView;
 
 import com.example.android.universityofthessaly.R;
 
-public class KarditsaIntegbWoodDesignDetailsFragment extends Fragment {
+public class KarditsaIntegbFoodScienceDetailsFragment extends Fragment {
 
-
-    public KarditsaIntegbWoodDesignDetailsFragment() {
+    public KarditsaIntegbFoodScienceDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -31,7 +30,7 @@ public class KarditsaIntegbWoodDesignDetailsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.department_details, container, false);
 
         TextView department = rootView.findViewById(R.id.department);
-        department.setText(R.string.integb_karditsa_wood_design);
+        department.setText(R.string.integb_karditsa_food_science);
 
         ProgressBar progressBar = rootView.findViewById(R.id.progress_bar);
 
@@ -39,32 +38,27 @@ public class KarditsaIntegbWoodDesignDetailsFragment extends Fragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setSupportZoom(true);
 
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(false);
 
-        if(requireActivity().getIntent().hasExtra("KarditsaIntegbWoodDesignTeachers")){
+        if(requireActivity().getIntent().hasExtra("KarditsaIntegbFoodScienceTeachers") || requireActivity().getIntent().hasExtra("KarditsaIntegbFoodScienceAnnouncements")){
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public void onPageFinished(WebView view, String url) {
-                    webView.setInitialScale(100);
+                    view.loadUrl("javascript:document.getElementsByClassName(\"content\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"containerheaderfull\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"system-messages clearfix\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"taxonomy-term vocabulary-uth-tax-akademaike-dome\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"clearfix header-top__container\")[0].setAttribute(\"style\",\"display:none;\");");
                 }
-            });
-            webView.loadUrl("http://www.wfdt.teilar.gr/people.php");
-            progressBar.setVisibility(View.GONE);
 
-        } else if(requireActivity().getIntent().hasExtra("KarditsaIntegbWoodDesignAnnouncements")){
-            webView.setWebViewClient(new WebViewClient(){
-                @Override
-                public void onPageFinished(WebView view, String url) {
-                    webView.setInitialScale(130);
-                }
             });
-            webView.loadUrl("http://www.wfdt.teilar.gr/news.php");
+            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-tehnologias-trofimon-tei-thessalias-karditsa");
             progressBar.setVisibility(View.GONE);
         }
 
-        return rootView;
+         return rootView;
     }
 }

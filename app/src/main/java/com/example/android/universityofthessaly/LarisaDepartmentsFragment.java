@@ -22,6 +22,7 @@ public class LarisaDepartmentsFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,9 +35,10 @@ public class LarisaDepartmentsFragment extends Fragment {
         //Set the text of CityName view
         CityName.setText(R.string.larisa_city);
 
+        //set the Background color of the View
         CityName.setBackgroundColor(getResources().getColor(R.color.red));
 
-        ((UthDeptsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+        ((UthDeptsActivity) requireActivity()).updateStatusBarColor("#b71c1c");
 
         //Create the ArrayList Departments using the Depts class
         final ArrayList<Depts> LarisaDepartments = new ArrayList<>();
@@ -63,13 +65,15 @@ public class LarisaDepartmentsFragment extends Fragment {
         LarisaDepartments.add(new Depts(R.color.red,R.string.integb_larisa_agricultural_technicians));
 
         //Create a new instance of the Adapter
-        DeptsAdapter adapter = new DeptsAdapter(getActivity(),LarisaDepartments);
+        DeptsAdapter adapter = new DeptsAdapter(requireActivity(),LarisaDepartments);
 
         //Get the id of the ListView
         ListView LarisaDeptsList = rootView.findViewById(R.id.departments_list);
 
         //Set the adapter to the ListView 'DeptsList'
         LarisaDeptsList.setAdapter(adapter);
+
+        //set the Background Color of the ListView "LarisaDeptsList"
         LarisaDeptsList.setBackgroundColor(getResources().getColor(R.color.white));
 
         LarisaDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

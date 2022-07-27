@@ -29,7 +29,7 @@ public class SecretaryLarisaSecondFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_secretary, container, false);
 
-        ((SecretaryActivityLarisa) Objects.requireNonNull(getActivity())).updateStatusBarColor("#b71c1c");
+        ((SecretaryActivityLarisa) requireActivity()).updateStatusBarColor("#b71c1c");
 
         ScrollView scrollView = rootView.findViewById(R.id.scroll);
         scrollView.setBackgroundColor(getResources().getColor(R.color.redLighter));

@@ -40,7 +40,6 @@ public class LarisaAnimalScienceFragment extends Fragment {
         deptsDetailsAnimalScience.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsAnimalScience.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetailsAnimalScience.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetailsAnimalScience.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsAnimalScience.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(requireActivity(),deptsDetailsAnimalScience);
@@ -62,9 +61,9 @@ public class LarisaAnimalScienceFragment extends Fragment {
                 } else if(position == 2) {
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://as.uth.gr/"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LanimalProdSecretary",4);
+                    secretary.putExtra("LanimalProdSecretary",3);
                     startActivity(secretary);
                 }
             }

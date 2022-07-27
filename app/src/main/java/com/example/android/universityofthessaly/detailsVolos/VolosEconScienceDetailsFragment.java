@@ -38,7 +38,7 @@ public class VolosEconScienceDetailsFragment extends Fragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setDomStorageEnabled(true);
 
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(false);

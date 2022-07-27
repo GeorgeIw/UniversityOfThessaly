@@ -29,43 +29,59 @@ public class KarditsaFoodScienceFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_depts_details, container, false);
 
+        //get the TextView
         TextView title = rootView.findViewById(R.id.depts_details);
+        //set the Text
         title.setText(R.string.karditsa_food_science);
+        //set the Text Color
         title.setTextColor(Color.WHITE);
+        //set the Background
         title.setBackgroundResource(R.color.deepOrange);
 
+        //change the color of Status Bar
         ((KarditsaDeptsDetailsActivity)requireActivity()).updateStatusBarColor("#BF360C");
 
+        //create the ArrayList
         final ArrayList<DeptsDetails> deptsDetails = new ArrayList<>();
-
+        //add the components of the ArrayList
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
+        //create an instance of the Adapter
         DetailsListAdapterKarditsa adapter = new DetailsListAdapterKarditsa(requireActivity(),deptsDetails);
+        //get the GridView
         GridView grid = rootView.findViewById(R.id.grid);
+        //set the Background of GridView
         grid.setBackgroundResource(R.color.deepOrangeLight);
+        //set the Adapter to the GridView
         grid.setAdapter(adapter);
 
+        ////set the OnItemClickListener, so it can handle onClick effects
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                //get the position of the List Item
                 if(position == 0){
+                    //create the Intent
                     Intent teachers = new Intent(getActivity(),DetailsKarditsaActivity.class);
+                    //add an extra value to the Intent
                     teachers.putExtra("KarditsaFoodScienceTeachers",0);
+                    //start the Activity
                     startActivity(teachers);
                 } else if(position == 1){
                     Intent announcements = new Intent(getActivity(),DetailsKarditsaActivity.class);
                     announcements.putExtra("KarditsaFoodScienceAnnouncements",1);
                     startActivity(announcements);
                 } else if(position == 2){
+                    //create the Intent
+                    //add the url to be opened
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://food.uth.gr"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityKarditsa.class);
-                    secretary.putExtra("KfoodScienceSecretary",4);
+                    secretary.putExtra("KfoodScienceSecretary",3);
                     startActivity(secretary);
                 }
             }

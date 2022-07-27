@@ -27,7 +27,7 @@ public class SecretaryVolosFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_secretary, container, false);
 
-        ((SecretaryActivityVolos) Objects.requireNonNull(getActivity())).updateStatusBarColor("#1A237E");
+        ((SecretaryActivityVolos) requireActivity()).updateStatusBarColor("#1A237E");
 
         CardView cardView = rootView.findViewById(R.id.secratary_card);
         cardView.setBackgroundColor(getResources().getColor(R.color.white));

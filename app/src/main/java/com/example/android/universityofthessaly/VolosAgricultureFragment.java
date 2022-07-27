@@ -40,7 +40,6 @@ public class VolosAgricultureFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterVolos adapter = new DetailsListAdapterVolos(requireActivity(),deptsDetails);
@@ -62,9 +61,9 @@ public class VolosAgricultureFragment extends Fragment {
                 } else if(position == 2){
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://agr.uth.gr/"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityVolos.class);
-                    secretary.putExtra("VagricultureSecretary",4);
+                    secretary.putExtra("VagricultureSecretary",3);
                     startActivity(secretary);
                 }
             }

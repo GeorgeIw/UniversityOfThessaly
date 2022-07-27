@@ -27,7 +27,7 @@ public class SecretaryLamiaFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_secretary, container, false);
 
-        ((SecretaryActivityLamia) Objects.requireNonNull(getActivity())).updateStatusBarColor("#37474F");
+        ((SecretaryActivityLamia) requireActivity()).updateStatusBarColor("#37474F");
 
         ScrollView scrollView = rootView.findViewById(R.id.scroll);
         scrollView.setBackgroundColor(getResources().getColor(R.color.blueGreyLightest));

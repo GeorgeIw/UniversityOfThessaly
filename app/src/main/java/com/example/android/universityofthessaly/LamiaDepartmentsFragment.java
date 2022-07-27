@@ -30,15 +30,19 @@ public class LamiaDepartmentsFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootViewLamia = inflater.inflate(R.layout.activity_uth_depts, container, false);
 
+        //get the TextView
         TextView cityName = rootViewLamia.findViewById(R.id.city_name);
-
+        //set the Text of the TextView
         cityName.setText(R.string.lamia_city);
+        //set the Background of the TextView
         cityName.setBackgroundResource(R.color.blueGrey);
 
-        ((UthDeptsActivity) Objects.requireNonNull(getActivity())).updateStatusBarColor("#37474F");
+        //change the color of the Status Bar
+        ((UthDeptsActivity) requireActivity()).updateStatusBarColor("#37474F");
 
+        //create the ArrayList
         final ArrayList<Depts> LamiaDepartments = new ArrayList<>();
-
+        //add the components of the ArrayList
         LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_computer_science));
         LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_cs_biomedicine));
         LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.lamia_physical_therapy));
@@ -47,19 +51,26 @@ public class LamiaDepartmentsFragment extends Fragment {
         LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.integb_lamia_computer_engineering));
         LamiaDepartments.add(new Depts(R.color.blueGrey,R.string.integb_lamia_physical_therapy));
 
-        DeptsAdapter LamiaDeptsAdapter = new DeptsAdapter(getActivity(),LamiaDepartments);
-
+        //create a new instance of the Adapter
+        DeptsAdapter LamiaDeptsAdapter = new DeptsAdapter(requireActivity(),LamiaDepartments);
+        //get the ListView
         ListView LamiaDeptsList = rootViewLamia.findViewById(R.id.departments_list);
-
+        //set the Adapter to the ListView
         LamiaDeptsList.setAdapter(LamiaDeptsAdapter);
+        //set the Background of the ListView
         LamiaDeptsList.setBackgroundColor(getResources().getColor(R.color.white));
 
+        //set the OnItemClickListener, so it can handle onClick effects
         LamiaDeptsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                //get the position of the List Item
                 if (position == 0) {
+                    //create the Intent
                     Intent computerScience = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);
+                    //add an extra value to the Intent
                     computerScience.putExtra("CSLamia", 0);
+                    //start the Activity
                     startActivity(computerScience);
                 } else if (position == 1) {
                     Intent csBiomedicine = new Intent(getActivity(), LamiaDeptsDetailsActivity.class);

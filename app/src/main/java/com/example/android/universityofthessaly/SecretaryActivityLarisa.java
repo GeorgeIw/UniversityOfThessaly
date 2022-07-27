@@ -17,15 +17,18 @@ public class SecretaryActivityLarisa extends AppCompatActivity {
         setContentView(R.layout.activity_secretary);
 
 
-
+        //if the callback has one of the following extra values
         if(getIntent().hasExtra("LbiochemistrySecratary") || getIntent().hasExtra("LmedicineSecretary") || getIntent().hasExtra("LnurserySecretary")
         || getIntent().hasExtra("LBusinessAdminSecretary") || getIntent().hasExtra("LaccFinanceSecretary") || getIntent().hasExtra("LenviromentSecretary")
         || getIntent().hasExtra("LenergySysSecretary") || getIntent().hasExtra("LdigitalSysSecretary") || getIntent().hasExtra("LagrotechnologySecretary")
         || getIntent().hasExtra("LanimalProdSecretary")){
-
+            //create the object of the Fragment
             SecretaryLarisaFragment secLarisaFragment = new SecretaryLarisaFragment();
+            //call Fragment Manager
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            //set the frame of the content
             transaction.replace(R.id.secretary_fragment_holder,secLarisaFragment);
+            //start the transaction
             transaction.commit();
 
 

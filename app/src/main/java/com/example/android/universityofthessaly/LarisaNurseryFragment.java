@@ -40,7 +40,6 @@ public class LarisaNurseryFragment extends Fragment {
         deptsDetailsNursery.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsNursery.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetailsNursery.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetailsNursery.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsNursery.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsNursery);
@@ -63,9 +62,9 @@ public class LarisaNurseryFragment extends Fragment {
                 } else if(position == 2) {
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://nurs.uth.gr/index.php"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LnurserySecretary",4);
+                    secretary.putExtra("LnurserySecretary",3);
                     startActivity(secretary);
                 }
             }

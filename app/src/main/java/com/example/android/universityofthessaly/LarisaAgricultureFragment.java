@@ -42,7 +42,6 @@ public class LarisaAgricultureFragment extends Fragment {
         deptsDetailsAgriculture.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsAgriculture.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetailsAgriculture.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetailsAgriculture.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsAgriculture.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsAgriculture);
@@ -64,9 +63,9 @@ public class LarisaAgricultureFragment extends Fragment {
                 } else if(position == 2) {
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://agrtec.uth.gr/"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LagrotechnologySecretary",4);
+                    secretary.putExtra("LagrotechnologySecretary",3);
                     startActivity(secretary);
                 }
             }

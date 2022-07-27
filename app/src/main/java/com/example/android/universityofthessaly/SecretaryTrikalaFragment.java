@@ -24,7 +24,7 @@ public class SecretaryTrikalaFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_secretary, container, false);
 
-        ((SecretaryActivityTrikala)getActivity()).updateStatusBarColor("#004D40");
+        ((SecretaryActivityTrikala)requireActivity()).updateStatusBarColor("#004D40");
 
         TextView title = rootView.findViewById(R.id.secretary_title);
         title.setBackgroundColor(getResources().getColor(R.color.teal));

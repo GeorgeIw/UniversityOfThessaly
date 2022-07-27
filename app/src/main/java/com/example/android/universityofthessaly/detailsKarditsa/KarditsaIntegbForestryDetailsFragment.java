@@ -1,4 +1,4 @@
-package com.example.android.universityofthessaly.DetailsTrikala;
+package com.example.android.universityofthessaly.detailsKarditsa;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -16,10 +16,10 @@ import android.widget.TextView;
 
 import com.example.android.universityofthessaly.R;
 
-public class TrikalaCivilEnginDetailsFragment extends Fragment {
+public class KarditsaIntegbForestryDetailsFragment extends Fragment {
 
 
-    public TrikalaCivilEnginDetailsFragment() {
+    public KarditsaIntegbForestryDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -31,7 +31,7 @@ public class TrikalaCivilEnginDetailsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.department_details, container, false);
 
         TextView department = rootView.findViewById(R.id.department);
-        department.setText(R.string.integb_trikala_civil_engineering);
+        department.setText(R.string.integb_karditsa_forestry_enviroment);
 
         ProgressBar progressBar = rootView.findViewById(R.id.progress_bar);
 
@@ -44,7 +44,7 @@ public class TrikalaCivilEnginDetailsFragment extends Fragment {
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(false);
 
-        if(requireActivity().getIntent().hasExtra("TrikalaCivilEnginTeachers") || requireActivity().getIntent().hasExtra("TrikalaCivilEnginAnnouncements")){
+        if(requireActivity().getIntent().hasExtra("KarditsaIntegbForestryTeachers") || requireActivity().getIntent().hasExtra("KarditsaIntegbForestryAnnouncements")){
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public void onPageFinished(WebView view, String url) {
@@ -55,11 +55,10 @@ public class TrikalaCivilEnginDetailsFragment extends Fragment {
                     view.loadUrl("javascript:document.getElementsByClassName(\"clearfix header-top__container\")[0].setAttribute(\"style\",\"display:none;\");");
                 }
             });
-            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-politikon-mihanikon-te-tei-thessalias-trikala");
+            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-dasoponias-kai-diaheirisis-fysikoy-periballontos-tei-thessalias-karditsa");
             progressBar.setVisibility(View.GONE);
 
         }
-
         return rootView;
     }
 }

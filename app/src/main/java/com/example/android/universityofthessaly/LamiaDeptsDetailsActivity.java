@@ -16,10 +16,15 @@ public class LamiaDeptsDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_depts_details);
 
+        //get the Extra value of the incoming Intent
         if(getIntent().hasExtra("CSLamia")){
+            //create an object of the Fragment
             LamiaCsFragment lamiaCsFragment = new LamiaCsFragment();
+            //call Support Fragment Manager to handle the Fragment
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            //add a frame for the fragment
             transaction.add(R.id.details_fragment_holder,lamiaCsFragment);
+            //establish the transaction
             transaction.commit();
         } else if(getIntent().hasExtra("CSBiomedicineLamia")){
             LamiaCsBiomedicineFragment lamiaCsBiomedicineFragment = new LamiaCsBiomedicineFragment();
@@ -54,6 +59,7 @@ public class LamiaDeptsDetailsActivity extends AppCompatActivity {
         }
     }
 
+    //method to change the color of the Status Bar
     public void updateStatusBarColor(String color){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             Window window = getWindow();

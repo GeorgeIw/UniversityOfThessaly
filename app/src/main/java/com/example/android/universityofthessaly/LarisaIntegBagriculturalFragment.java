@@ -43,7 +43,6 @@ public class LarisaIntegBagriculturalFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(requireActivity(),deptsDetails);
@@ -65,9 +64,9 @@ public class LarisaIntegBagriculturalFragment extends Fragment {
                 } else if(position == 2){
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-tehnologon-geoponon-tei-thessalias-larisa"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LintegbAgricultureSecretary",4);
+                    secretary.putExtra("LintegbAgricultureSecretary",3);
                     startActivity(secretary);
                 }
             }

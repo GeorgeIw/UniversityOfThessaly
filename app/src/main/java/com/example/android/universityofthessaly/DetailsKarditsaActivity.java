@@ -5,14 +5,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaFoodScienceDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaForestryWoodDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaIntegbDietDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaIntegbFoodScienceDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaIntegbForestryDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaIntegbWoodDesignDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaPublicHealthDetailsFragment;
-import com.example.android.universityofthessaly.DetailsKarditsa.KarditsaVetDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaFoodScienceDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaForestryWoodDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaIntegbDietDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaIntegbFoodScienceDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaIntegbForestryDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaIntegbWoodDesignDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaPublicHealthDetailsFragment;
+import com.example.android.universityofthessaly.detailsKarditsa.KarditsaVetDetailsFragment;
 
 public class DetailsKarditsaActivity extends AppCompatActivity {
 

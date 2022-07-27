@@ -5,9 +5,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.android.universityofthessaly.DetailsTrikala.TrikalaCivilEnginDetailsFragment;
-import com.example.android.universityofthessaly.DetailsTrikala.TrikalaDietDetailsFragment;
-import com.example.android.universityofthessaly.DetailsTrikala.TrikalaPhysicalEduDetailsFragment;
+import com.example.android.universityofthessaly.detailsTrikala.TrikalaCivilEnginDetailsFragment;
+import com.example.android.universityofthessaly.detailsTrikala.TrikalaDietDetailsFragment;
+import com.example.android.universityofthessaly.detailsTrikala.TrikalaPhysicalEduDetailsFragment;
 
 public class DetailsTrikalaActivity extends AppCompatActivity {
 

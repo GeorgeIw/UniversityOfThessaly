@@ -15,6 +15,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class LarisaBiochemistryFragment extends Fragment {
 
@@ -42,10 +43,9 @@ public class LarisaBiochemistryFragment extends Fragment {
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsBiochemistry.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
-        DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsBiochemistry);
+        DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(requireActivity(),deptsDetailsBiochemistry);
         GridView gridView = rootView.findViewById(R.id.grid);
         gridView.setBackgroundResource(R.color.redLight);
         gridView.setAdapter(adapter);
@@ -65,9 +65,9 @@ public class LarisaBiochemistryFragment extends Fragment {
                 } else if(position == 2){
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.bio.uth.gr/"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LbiochemistrySecratary",4);
+                    secretary.putExtra("LbiochemistrySecratary",3);
                     startActivity(secretary);
                 }
             }

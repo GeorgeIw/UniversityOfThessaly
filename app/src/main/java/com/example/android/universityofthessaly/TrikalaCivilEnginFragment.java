@@ -41,7 +41,6 @@ public class TrikalaCivilEnginFragment extends Fragment {
         deptsDetails.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetails.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetails.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetails.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetails.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterTrikala adapter = new DetailsListAdapterTrikala(requireActivity(),deptsDetails);
@@ -63,9 +62,9 @@ public class TrikalaCivilEnginFragment extends Fragment {
                 } else if(position == 2){
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-politikon-mihanikon-te-tei-thessalias-trikala"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(),SecretaryActivityTrikala.class);
-                    secretary.putExtra("TcivilEnginSecretary",4);
+                    secretary.putExtra("TcivilEnginSecretary",3);
                     startActivity(secretary);
                 }
             }

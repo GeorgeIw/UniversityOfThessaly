@@ -1,4 +1,4 @@
-package com.example.android.universityofthessaly.DetailsKarditsa;
+package com.example.android.universityofthessaly.detailsKarditsa;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -16,10 +16,10 @@ import android.widget.TextView;
 
 import com.example.android.universityofthessaly.R;
 
-public class KarditsaIntegbForestryDetailsFragment extends Fragment {
+public class KarditsaIntegbDietDetailsFragment extends Fragment {
 
 
-    public KarditsaIntegbForestryDetailsFragment() {
+    public KarditsaIntegbDietDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -31,20 +31,20 @@ public class KarditsaIntegbForestryDetailsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.department_details, container, false);
 
         TextView department = rootView.findViewById(R.id.department);
-        department.setText(R.string.integb_karditsa_forestry_enviroment);
+        department.setText(R.string.integb_karditsa_diet);
 
         ProgressBar progressBar = rootView.findViewById(R.id.progress_bar);
 
-        WebView webView = rootView.findViewById(R.id.webview);
+        final WebView webView = rootView.findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setSupportZoom(true);
 
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(false);
 
-        if(requireActivity().getIntent().hasExtra("KarditsaIntegbForestryTeachers") || requireActivity().getIntent().hasExtra("KarditsaIntegbForestryAnnouncements")){
+        if(requireActivity().getIntent().hasExtra("KarditsaIntegbDietTeachers") || requireActivity().getIntent().hasExtra("KarditsaIntegbDietAnnouncements")){
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public void onPageFinished(WebView view, String url) {
@@ -54,10 +54,10 @@ public class KarditsaIntegbForestryDetailsFragment extends Fragment {
                     view.loadUrl("javascript:document.getElementsByClassName(\"taxonomy-term vocabulary-uth-tax-akademaike-dome\")[0].setAttribute(\"style\",\"display:none;\");");
                     view.loadUrl("javascript:document.getElementsByClassName(\"clearfix header-top__container\")[0].setAttribute(\"style\",\"display:none;\");");
                 }
-            });
-            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-dasoponias-kai-diaheirisis-fysikoy-periballontos-tei-thessalias-karditsa");
-            progressBar.setVisibility(View.GONE);
 
+            });
+            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-diatrofis-kai-diaitologias-tei-thessalias-karditsa");
+            progressBar.setVisibility(View.GONE);
         }
         return rootView;
     }

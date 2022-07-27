@@ -1,4 +1,4 @@
-package com.example.android.universityofthessaly.DetailsKarditsa;
+package com.example.android.universityofthessaly.detailsTrikala;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -16,9 +16,10 @@ import android.widget.TextView;
 
 import com.example.android.universityofthessaly.R;
 
-public class KarditsaPublicHealthDetailsFragment extends Fragment {
+public class TrikalaCivilEnginDetailsFragment extends Fragment {
 
-    public KarditsaPublicHealthDetailsFragment() {
+
+    public TrikalaCivilEnginDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -30,7 +31,7 @@ public class KarditsaPublicHealthDetailsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.department_details, container, false);
 
         TextView department = rootView.findViewById(R.id.department);
-        department.setText(R.string.karditsa_public_health);
+        department.setText(R.string.integb_trikala_civil_engineering);
 
         ProgressBar progressBar = rootView.findViewById(R.id.progress_bar);
 
@@ -39,33 +40,24 @@ public class KarditsaPublicHealthDetailsFragment extends Fragment {
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setSupportZoom(false);
-        webView.getSettings().setDomStorageEnabled(true);
-
 
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(false);
 
-        if(requireActivity().getIntent().hasExtra("KarditsaPublicHealthTeachers")){
+        if(requireActivity().getIntent().hasExtra("TrikalaCivilEnginTeachers") || requireActivity().getIntent().hasExtra("TrikalaCivilEnginAnnouncements")){
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public void onPageFinished(WebView view, String url) {
-                    view.loadUrl("javascript:document.getElementById(\"SITE_HEADER\").setAttribute(\"style\",\"display:none;\");");
-                    view.loadUrl("javascript:document.getElementById(\"SITE_FOOTER\").setAttribute(\"style\",\"visibility:hidden;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"content\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"containerheaderfull\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"system-messages clearfix\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"taxonomy-term vocabulary-uth-tax-akademaike-dome\")[0].setAttribute(\"style\",\"display:none;\");");
+                    view.loadUrl("javascript:document.getElementsByClassName(\"clearfix header-top__container\")[0].setAttribute(\"style\",\"display:none;\");");
                 }
             });
-            webView.loadUrl("https://www.pubhealth.uth.gr/meli-d-e-p");
+            webView.loadUrl("https://www.uth.gr/spoydes/proptychiakes/schools-departments/symboylio-entaxis/programma-spoydon-tmimatos-politikon-mihanikon-te-tei-thessalias-trikala");
             progressBar.setVisibility(View.GONE);
 
-        } else if(requireActivity().getIntent().hasExtra("KarditsaPublicHealthAnnouncements")){
-            webView.setWebViewClient(new WebViewClient(){
-                @Override
-                public void onPageFinished(WebView view, String url) {
-                    view.loadUrl("javascript:document.getElementById(\"SITE_HEADER\").setAttribute(\"style\",\"display:none;\");");
-                    view.loadUrl("javascript:document.getElementById(\"SITE_FOOTER\").setAttribute(\"style\",\"visibility:hidden;\");");
-                }
-            });
-            webView.loadUrl("https://www.pubhealth.uth.gr/anakoinoseis");
-            progressBar.setVisibility(View.GONE);
         }
 
         return rootView;

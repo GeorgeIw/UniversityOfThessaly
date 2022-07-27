@@ -41,7 +41,6 @@ public class LarisaEnergySystemsFragment extends Fragment {
         deptsDetailsHealth.add(new DeptsDetails(R.drawable.teacher_icon_new_png,R.string.teachers));
         deptsDetailsHealth.add(new DeptsDetails(R.drawable.announcement_icon_png,R.string.announcements));
         deptsDetailsHealth.add(new DeptsDetails(R.drawable.web_icon,R.string.website));
-        deptsDetailsHealth.add(new DeptsDetails(R.drawable.map_icon,R.string.map));
         deptsDetailsHealth.add(new DeptsDetails(R.drawable.secretary_icon,R.string.secretary));
 
         DetailsListAdapterLarisa adapter = new DetailsListAdapterLarisa(getActivity(),deptsDetailsHealth);
@@ -63,9 +62,9 @@ public class LarisaEnergySystemsFragment extends Fragment {
                 } else if(position == 2) {
                     Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.energy.uth.gr/"));
                     startActivity(browser);
-                } else if(position == 4){
+                } else if(position == 3){
                     Intent secretary = new Intent(getActivity(), SecretaryActivityLarisa.class);
-                    secretary.putExtra("LenergySysSecretary",4);
+                    secretary.putExtra("LenergySysSecretary",3);
                     startActivity(secretary);
                 }
             }
